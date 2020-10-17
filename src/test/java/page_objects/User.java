@@ -1,5 +1,6 @@
 package page_objects;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,5 +20,10 @@ public class User {
     public void navigateTo(String url){
         driver.get(url);
         driverWait.until(ExpectedConditions.visibilityOfElementLocated(headerImageLocator));
+    }
+
+    public void canSeeHeaderImage() {
+        Assertions.assertTrue(driver.findElement(headerImageLocator).isEnabled(),
+                "\n\nUser can NOT see header image on the top of page!\n\n");
     }
 }
