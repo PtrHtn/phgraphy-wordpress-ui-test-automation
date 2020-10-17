@@ -12,5 +12,6 @@ public class PHgraphyCom  extends User {
 
     @Then("header image is displayed on the top of page")
     public void headerImageIsDisplayedOnTheTopOfPage() {
+        user().canSeeHeaderImage();
     }
 }
