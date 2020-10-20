@@ -5,3 +5,8 @@ Feature: phgraphy.com
   Background: User can navigate to phgraphy.com homepage
     Given user is on the homepage of phgraphy.com website
     Then header image is displayed on the top of page
+
+  @SmokeTest
+  Scenario: User can close & accept Cookie Policy
+    When user is on the homepage for the first time
+    Then Cookie Policy bar is displayed on the bottom of the page
