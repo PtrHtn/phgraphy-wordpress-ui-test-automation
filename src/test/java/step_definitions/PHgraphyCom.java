@@ -2,6 +2,7 @@ package step_definitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import page_objects.User;
 
 public class PHgraphyCom  extends User {
@@ -13,5 +14,14 @@ public class PHgraphyCom  extends User {
     @Then("header image is displayed on the top of page")
     public void headerImageIsDisplayedOnTheTopOfPage() {
         user().canSeeHeaderImage();
+    }
+
+    @When("user is on the homepage for the first time")
+    public void userIsOnTheHomepageForTheFirstTime() {
+    }
+
+    @Then("Cookie Policy bar is displayed on the bottom of the page")
+    public void cookiePolicyBarIsDisplayedOnTheBottomOfThePage() {
+        user().canSeeCookiePolicyBar();
     }
 }
