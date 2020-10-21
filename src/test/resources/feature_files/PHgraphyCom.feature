@@ -10,3 +10,4 @@ Feature: phgraphy.com
   Scenario: User can close & accept Cookie Policy
     When user is on the homepage for the first time
     Then Cookie Policy bar is displayed on the bottom of the page
+    And contains text "Privacy & Cookies: This site uses cookies. By continuing to use this website, you agree to their use."
