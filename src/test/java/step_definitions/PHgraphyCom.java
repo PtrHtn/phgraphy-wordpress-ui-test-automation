@@ -1,5 +1,6 @@
 package step_definitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,5 +24,10 @@ public class PHgraphyCom  extends User {
     @Then("Cookie Policy bar is displayed on the bottom of the page")
     public void cookiePolicyBarIsDisplayedOnTheBottomOfThePage() {
         user().canSeeCookiePolicyBar();
+    }
+
+    @And("contains text {string}")
+    public void containsText(String cookiePolicyText) {
+        user().canSeeCookiePolicyText(cookiePolicyText);
     }
 }
