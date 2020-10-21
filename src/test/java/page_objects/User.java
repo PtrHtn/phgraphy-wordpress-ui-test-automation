@@ -33,4 +33,11 @@ public class User {
                 "\n\nUser can NOT see Cookie Policy bar on the bottom of page!\n\n");
     }
 
+    public void canSeeCookiePolicyText(String cookiePolicyText) {
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(cookiePolicyBarLocator));
+        Assertions.assertTrue(driver.findElement(cookiePolicyBarLocator).getText().contains(cookiePolicyText),
+                "\n\nCookie Policy text doesn't contain expected text!\n" +
+                        "expected: " + cookiePolicyText + "\n" +
+                        "actual:   " + driver.findElement(cookiePolicyBarLocator).getText() +"\n\n");
+    }
 }
