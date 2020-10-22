@@ -30,4 +30,9 @@ public class PHgraphyCom  extends User {
     public void containsText(String cookiePolicyText) {
         user().canSeeCookiePolicyText(cookiePolicyText);
     }
+
+    @When("user clicks button Close and accept")
+    public void userClicksButtonCloseAndAccept() {
+        user().clickButtonCloseAndAccept();
+    }
 }
