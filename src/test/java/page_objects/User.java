@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import step_definitions.CucumberHooks;
 
 public class User {
 
@@ -14,6 +13,7 @@ public class User {
 
     private final By headerImageLocator = By.id("header-image");
     private final By cookiePolicyBarLocator = By.cssSelector("div[class='widget widget_eu_cookie_law_widget'] form");
+    private final By buttonCloseAndAcceptLocator = By.cssSelector("input[value='Close and accept']");
 
 
     public User user() { return this; }
@@ -39,5 +39,10 @@ public class User {
                 "\n\nCookie Policy text doesn't contain expected text!\n" +
                         "expected: " + cookiePolicyText + "\n" +
                         "actual:   " + driver.findElement(cookiePolicyBarLocator).getText() +"\n\n");
+    }
+
+    public void clickButtonCloseAndAccept() {
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(buttonCloseAndAcceptLocator));
+        driver.findElement(buttonCloseAndAcceptLocator).click();
     }
 }
