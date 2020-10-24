@@ -45,4 +45,11 @@ public class User {
         driverWait.until(ExpectedConditions.visibilityOfElementLocated(buttonCloseAndAcceptLocator));
         driver.findElement(buttonCloseAndAcceptLocator).click();
     }
+
+    public void canNotSeeCookiePolicyBar() {
+        driverWait.until(ExpectedConditions.invisibilityOfElementLocated(cookiePolicyBarLocator));
+        Boolean isPresent = driver.findElements(cookiePolicyBarLocator).size() > 0;
+        System.out.println(" > Is Cookie Policy bar Present? " + isPresent);
+        Assertions.assertFalse(isPresent, "\n\nUser can see Cookie Policy bar on the bottom of page!\n\n");
+    }
 }
