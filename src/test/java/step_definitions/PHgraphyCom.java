@@ -35,4 +35,9 @@ public class PHgraphyCom  extends User {
     public void userClicksButtonCloseAndAccept() {
         user().clickButtonCloseAndAccept();
     }
+
+    @Then("Cookie Policy bar is not displayed")
+    public void cookiePolicyBarIsDisplayedNoMore() {
+        user().canNotSeeCookiePolicyBar();
+    }
 }
