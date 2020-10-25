@@ -13,3 +13,8 @@ Feature: phgraphy.com
     And contains text "Privacy & Cookies: This site uses cookies. By continuing to use this website, you agree to their use."
     When user clicks button Close and accept
     Then Cookie Policy bar is not displayed
+
+  @SmokeTest
+  Scenario: User can open image
+    When user clicks on the first image
+    Then first image is displayed in higher resolution
