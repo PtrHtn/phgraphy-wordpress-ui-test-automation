@@ -40,4 +40,12 @@ public class PHgraphyCom  extends User {
     public void cookiePolicyBarIsDisplayedNoMore() {
         user().canNotSeeCookiePolicyBar();
     }
+
+    @When("user clicks on the first image")
+    public void userClicksOnTheFirstImage() {
+    }
+
+    @Then("first image is displayed in higher resolution")
+    public void firstImageIsDisplayedInHigherResolution() {
+    }
 }
