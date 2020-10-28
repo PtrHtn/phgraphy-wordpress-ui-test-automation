@@ -16,5 +16,5 @@ Feature: phgraphy.com
 
   @SmokeTest
   Scenario: User can open image
-    When user clicks on the first image
+    When user clicks on the first image in the gallery
     Then first image is displayed in higher resolution
