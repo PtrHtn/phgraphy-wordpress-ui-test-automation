@@ -44,11 +44,11 @@ public class PHgraphyCom  extends User {
 
     @When("user clicks on the first image in the gallery")
     public void userClicksOnTheFirstImageInTheGallery() {
+        user().clickOnTheFirstImageInTheGallery();
     }
 
     @Then("first image is displayed in higher resolution")
     public void firstImageIsDisplayedInHigherResolution() {
     }
-
 
 }
