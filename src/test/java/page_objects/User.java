@@ -14,6 +14,7 @@ public class User {
     private final By headerImageLocator = By.id("header-image");
     private final By cookiePolicyBarLocator = By.cssSelector("div[class='widget widget_eu_cookie_law_widget'] form");
     private final By buttonCloseAndAcceptLocator = By.cssSelector("input[value='Close and accept']");
+    private final By allImagesInTheGallery = By.cssSelector("div[class='tiled-gallery type-rectangular'] div[class='gallery-group images-1']");
 
 
     public User user() { return this; }
@@ -51,5 +52,10 @@ public class User {
         Boolean isPresent = driver.findElements(cookiePolicyBarLocator).size() > 0;
         System.out.println(" > Is Cookie Policy bar Present? " + isPresent);
         Assertions.assertFalse(isPresent, "\n\nUser can see Cookie Policy bar on the bottom of page!\n\n");
+    }
+
+    public void clickOnTheFirstImageInTheGallery() {
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(allImagesInTheGallery));
+        driver.findElement(allImagesInTheGallery).click();
     }
 }
