@@ -18,3 +18,8 @@ Feature: phgraphy.com
   Scenario: User can open image
     When user clicks on the first image in the gallery
     Then first image is displayed in higher resolution
+
+  @SmokeTest
+  Scenario: Title of the gallery is the same as the top bar button name pressed
+    When user clicks on the top bar button named "PORTRAIT PHOTOGRAPHY"
+    Then title of the gallery is "PORTRAIT PHOTOGRAPHY"
