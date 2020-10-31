@@ -14,8 +14,8 @@ public class User {
     private final By headerImageLocator = By.id("header-image");
     private final By cookiePolicyBarLocator = By.cssSelector("div[class='widget widget_eu_cookie_law_widget'] form");
     private final By buttonCloseAndAcceptLocator = By.cssSelector("input[value='Close and accept']");
-    private final By allImagesInTheGallery = By.cssSelector("div[class='tiled-gallery type-rectangular'] div[class='gallery-group images-1']");
-
+    private final By allImagesInTheGalleryLocator = By.cssSelector("div[class='tiled-gallery type-rectangular'] div[class='gallery-group images-1']");
+    private final By slideSelectedLocator = By.cssSelector("div[class='jp-carousel-slide selected']");
 
     public User user() { return this; }
 
@@ -55,7 +55,13 @@ public class User {
     }
 
     public void clickOnTheFirstImageInTheGallery() {
-        driverWait.until(ExpectedConditions.visibilityOfElementLocated(allImagesInTheGallery));
-        driver.findElement(allImagesInTheGallery).click();
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(allImagesInTheGalleryLocator));
+        driver.findElement(allImagesInTheGalleryLocator).click();
+    }
+
+    public void canSeeImageIsDisplayedInHigherResolution() {
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(slideSelectedLocator));
+        Assertions.assertTrue(driver.findElement(slideSelectedLocator).isDisplayed(),
+                "\n\nCarousel slide is not displayed!\n");
     }
 }
