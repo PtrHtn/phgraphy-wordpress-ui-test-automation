@@ -49,6 +49,7 @@ public class PHgraphyCom  extends User {
 
     @Then("first image is displayed in higher resolution")
     public void firstImageIsDisplayedInHigherResolution() {
+        user().canSeeImageIsDisplayedInHigherResolution();
     }
 
 }
