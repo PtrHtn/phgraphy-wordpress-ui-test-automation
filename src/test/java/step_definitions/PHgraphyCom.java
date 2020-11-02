@@ -52,4 +52,11 @@ public class PHgraphyCom  extends User {
         user().canSeeImageIsDisplayedInHigherResolution();
     }
 
+    @When("user clicks on the top bar button named {string}")
+    public void userClicksOnTheTopBarButtonNamed(String buttonName) {
+    }
+
+    @Then("title of the gallery is {string}")
+    public void titleOfTheGalleryIs(String galleryTitle) {
+    }
 }
