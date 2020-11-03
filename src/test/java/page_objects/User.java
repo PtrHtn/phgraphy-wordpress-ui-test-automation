@@ -16,6 +16,10 @@ public class User {
     private final By buttonCloseAndAcceptLocator = By.cssSelector("input[value='Close and accept']");
     private final By allImagesInTheGalleryLocator = By.cssSelector("div[class='tiled-gallery type-rectangular'] div[class='gallery-group images-1']");
     private final By slideSelectedLocator = By.cssSelector("div[class='jp-carousel-slide selected']");
+    private final By navigationBarLocator = By.id("nav");
+    private final By pageTitleLocator =By.cssSelector("h2[class='page-title']");
+    private By navigationBarButtonLocator(String buttonName){return By.xpath("//a[text()='" + buttonName + "']");}
+
 
     public User user() { return this; }
 
@@ -64,4 +68,10 @@ public class User {
         Assertions.assertTrue(driver.findElement(slideSelectedLocator).isDisplayed(),
                 "\n\nCarousel slide is not displayed!\n");
     }
+
+    public void clicksOnTheTopBarButtonNamed(String buttonName) {
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(navigationBarLocator));
+        driver.findElement(navigationBarButtonLocator(buttonName)).click();
+    }
+
 }
