@@ -74,4 +74,9 @@ public class User {
         driver.findElement(navigationBarButtonLocator(buttonName)).click();
     }
 
+    public void canSeeTitleOfTheGalleryIs(String galleryTitle) {
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(pageTitleLocator));
+        Assertions.assertTrue(driver.findElement(pageTitleLocator).getText().contains(galleryTitle),
+                "\n\nPage title '" + galleryTitle + "' is not displayed!\n");
+    }
 }
