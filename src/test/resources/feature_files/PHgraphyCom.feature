@@ -21,5 +21,5 @@ Feature: phgraphy.com
 
   @SmokeTest
   Scenario: Title of the gallery is the same as the top bar button name pressed
-    When user clicks on the top bar button named "PORTRAIT PHOTOGRAPHY"
+    When user clicks on the top bar button named "Portrait Photography"
     Then title of the gallery is "PORTRAIT PHOTOGRAPHY"
