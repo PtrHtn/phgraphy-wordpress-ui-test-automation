@@ -54,9 +54,11 @@ public class PHgraphyCom  extends User {
 
     @When("user clicks on the top bar button named {string}")
     public void userClicksOnTheTopBarButtonNamed(String buttonName) {
+        user().clicksOnTheTopBarButtonNamed(buttonName);
     }
 
     @Then("title of the gallery is {string}")
     public void titleOfTheGalleryIs(String galleryTitle) {
+        user().canSeeTitleOfTheGalleryIs(galleryTitle);
     }
 }
