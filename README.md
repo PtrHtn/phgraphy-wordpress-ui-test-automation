@@ -12,4 +12,4 @@
 - [Git](https://git-scm.com)
 - [JDK 14+](https://openjdk.java.net/)
 - [Maven 3.6.3+](https://maven.apache.org)
-- [Chrome browser](https://www.google.com/chrome/), _tested with version 84 and 85_
+- [Chrome browser](https://www.google.com/chrome/), _tested with version 88_
